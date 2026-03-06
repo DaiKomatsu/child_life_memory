@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Child Life Memory - UIモック（ホーム）</title>
+  <style>
+    :root {
+      --soft-pink: #E8B4B8;
+      --beige: #F5E6D3;
+      --sand: #F0EBE3;
+      --off-white: #FAFAF8;
+      --mint: #B8D4CE;
+      --text: #4A4A4A;
+      --text-sub: #6B6B6B;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Hiragino Sans', 'Hiragino Kaku Gothic ProN', sans-serif;
+      background: var(--off-white);
+      color: var(--text);
+      min-height: 100vh;
+      padding: 16px;
+      max-width: 390px;
+      margin: 0 auto;
+    }
+    .header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 20px;
+    }
+    .logo { font-size: 18px; font-weight: bold; color: var(--text); }
+    .child-badge {
+      background: var(--mint);
+      color: var(--text);
+      padding: 6px 12px;
+      border-radius: 20px;
+      font-size: 13px;
+    }
+    h1 {
+      font-size: 16px;
+      color: var(--text-sub);
+      margin-bottom: 12px;
+      font-weight: 600;
+    }
+    .card {
+      background: white;
+      border-radius: 16px;
+      padding: 16px;
+      margin-bottom: 16px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+    }
+    .card.sand { background: var(--sand); }
+    .summary-row {
+      display: flex;
+      gap: 16px;
+      font-size: 14px;
+      color: var(--text-sub);
+    }
+    .summary-row span { color: var(--text); }
+    .cta {
+      display: block;
+      width: 100%;
+      padding: 14px;
+      margin-top: 12px;
+      background: var(--soft-pink);
+      color: var(--text);
+      border: none;
+      border-radius: 12px;
+      font-size: 16px;
+      font-weight: 600;
+      cursor: pointer;
+      text-align: center;
+    }
+    .album-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 8px;
+    }
+    .album-cell {
+      aspect-ratio: 1;
+      background: var(--beige);
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 24px;
+    }
+    .section-title {
+      font-size: 14px;
+      color: var(--text-sub);
+      margin-bottom: 8px;
+    }
+    .ai-card {
+      background: linear-gradient(135deg, var(--beige) 0%, var(--sand) 100%);
+      border-radius: 16px;
+      padding: 16px;
+    }
+    .ai-card h3 { font-size: 14px; margin-bottom: 8px; color: var(--text); }
+    .ai-card p { font-size: 13px; color: var(--text-sub); line-height: 1.5; }
+    .nav {
+      position: fixed;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      max-width: 390px;
+      width: 100%;
+      display: flex;
+      justify-content: space-around;
+      padding: 12px 0 24px;
+      background: var(--off-white);
+      border-top: 1px solid var(--sand);
+    }
+    .nav-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 4px;
+      font-size: 10px;
+      color: var(--text-sub);
+    }
+    .nav-item.active { color: var(--soft-pink); font-weight: 600; }
+    .main { padding-bottom: 80px; }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <span class="logo">Child Life Memory</span>
+    <span class="child-badge">あかり ・ 3ヶ月</span>
+  </div>
+  <div class="main">
+    <h1>今日のサマリ</h1>
+    <div class="card">
+      <div class="summary-row">
+        <span>身長</span> 58cm　<span>体重</span> 5.2kg
+      </div>
+      <div class="summary-row" style="margin-top:4px;">
+        先週の記録があります
+      </div>
+      <button type="button" class="cta">記録する</button>
+    </div>
+    <div class="card sand">
+      <p class="section-title">今月のアルバム</p>
+      <div class="album-grid">
+        <div class="album-cell">📷</div>
+        <div class="album-cell">📷</div>
+        <div class="album-cell">📷</div>
+        <div class="album-cell">＋</div>
+      </div>
+    </div>
+    <div class="card ai-card">
+      <h3>今月のおすすめ</h3>
+      <p>3〜4ヶ月頃は首がすわってきます。お散歩用のベビーカーや抱っこ紐の見直しがおすすめです。</p>
+    </div>
+  </div>
+  <nav class="nav">
+    <div class="nav-item active">🏠 ホーム</div>
+    <div class="nav-item">📈 成長</div>
+    <div class="nav-item">📷 アルバム</div>
+    <div class="nav-item">💡 AI</div>
+  </nav>
+</body>
+</html>
